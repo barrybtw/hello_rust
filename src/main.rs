@@ -35,6 +35,8 @@ fn main() {
     }
 
     println!("Thanks for playing!");
+
+    
     // don't close the window
     let mut close: String = String::new();
     io::stdin().read_line(&mut close).expect("Failed to read line");
