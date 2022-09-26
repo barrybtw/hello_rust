@@ -2,10 +2,10 @@ use rand::Rng;
 use std::io;
 
 fn main() {
-    let secret_number = rand::thread_rng().gen_range(1..=3);
+    let secret_number: i32 = rand::thread_rng().gen_range(1..=3);
     println!("The secret number is: {}", secret_number);
 
-    let computer_choice = if secret_number == 1 {
+    let computer_choice: &str = if secret_number == 1 {
         "rock"
     } else if secret_number == 2 {
         "paper"
@@ -16,9 +16,9 @@ fn main() {
     println!("The computer chose: {}", computer_choice);
 
     println!("What is your choice? (rock, paper, scissors)");
-    let mut user_choice = String::new();
+    let mut user_choice: String = String::new();
     io::stdin().read_line(&mut user_choice).expect("Failed to read line");
-    let user_choice = user_choice.trim();
+    let user_choice: &str = user_choice.trim();
 
     println!("You chose: {}", user_choice);
 
@@ -36,6 +36,6 @@ fn main() {
 
     println!("Thanks for playing!");
     // don't close the window
-    let mut close = String::new();
+    let mut close: String = String::new();
     io::stdin().read_line(&mut close).expect("Failed to read line");
 }
